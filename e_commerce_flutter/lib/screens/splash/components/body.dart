@@ -1,4 +1,6 @@
+import 'package:e_commerce_flutter/components/default_button.dart';
 import 'package:e_commerce_flutter/constants.dart';
+import 'package:e_commerce_flutter/screens/sign_in/sign_in_screen.dart';
 import 'package:e_commerce_flutter/screens/splash/components/splash_content.dart';
 import 'package:e_commerce_flutter/size_config.dart' as SZ;
 import 'package:flutter/material.dart';
@@ -68,23 +70,12 @@ class _BodyState extends State<Body> {
                           .map((e) => _buildDot(index: splashData.indexOf(e)))
                           .toList(),
                     ),
-                    Spacer(flex: 2,),
-                    SizedBox(
-                      width: double.infinity,
-                      height: SZ.getProportionateScreenHeight(56),
-                      child: FlatButton(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusDirectional.circular(20)),
-                        onPressed: () {},
-                        color: kPrimaryColor,
-                        child: Text(
-                          "Continue",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: SZ.getProportionateScreenWidth(18)),
-                        ),
-                      ),
+                    Spacer(
+                      flex: 3,
                     ),
+                    DefaultButton(text: "Continue", press: (){
+                      Navigator.pushNamed(context, SignInScreen.routeName);
+                    },),
                     Spacer(),
                   ],
                 ),
@@ -107,3 +98,5 @@ class _BodyState extends State<Body> {
     );
   }
 }
+
+

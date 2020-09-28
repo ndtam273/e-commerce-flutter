@@ -1,3 +1,4 @@
+import 'package:e_commerce_flutter/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
@@ -15,20 +16,34 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: "Muli",
-        textTheme: TextTheme(
-          bodyText1: TextStyle(
-            color: kTextColor,
-          ),
-          bodyText2: TextStyle(color: kTextColor),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: SplashScreen(),
+      theme: theme(),
+
+      // home: SplashScreen(),
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
+}
+
+ThemeData theme() {
+  return ThemeData(
+    scaffoldBackgroundColor: Colors.white,
+    fontFamily: "Muli",
+    appBarTheme: AppBarTheme(
+        color: Colors.white,
+        elevation: 0,
+        brightness: Brightness.light,
+        iconTheme: IconThemeData(color: Colors.black),
+        textTheme: TextTheme(
+            headline6: TextStyle(color: Color(0XFF8B8B8B), fontSize: 18))),
+    textTheme: TextTheme(
+      bodyText1: TextStyle(
+        color: kTextColor,
+      ),
+      bodyText2: TextStyle(color: kTextColor),
+    ),
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+  );
 }
 
 class HomeScreen extends StatelessWidget {
