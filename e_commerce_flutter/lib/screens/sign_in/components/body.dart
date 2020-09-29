@@ -45,11 +45,19 @@ class _SignFormState extends State<SignForm> {
       children: [
         TextFormField(
           decoration: InputDecoration(
-              hintText: "Enter your email",
-              labelText: "Email",
-              enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(28),
-                  borderSide: BorderSide(color: kTextColor))),
+            hintText: "Enter your email",
+            floatingLabelBehavior: FloatingLabelBehavior.always,
+            contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 15),
+            labelText: "Email",
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(28),
+                borderSide: BorderSide(color: kTextColor),
+                gapPadding: 10),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(28),
+                borderSide: BorderSide(color: kTextColor),
+                gapPadding: 10),
+          ),
         )
       ],
     ));
