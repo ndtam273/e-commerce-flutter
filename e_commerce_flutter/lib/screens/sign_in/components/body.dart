@@ -43,29 +43,31 @@ class SignForm extends StatefulWidget {
 
 class _SignFormState extends State<SignForm> {
   final _formKey = GlobalKey<FormState>();
-  final List<String> errors = ["Demo Errors"];
+  final List<String> errors = [];
   @override
   Widget build(BuildContext context) {
     return Form(
+        key: _formKey,
         child: Column(
-      children: [
-        _buildEmailFormField(),
-        SizedBox(
-          height: SZ.getProportionateScreenHeight(20),
-        ),
-        _buildPasswordFormField(),
-        SizedBox(height: SZ.getProportionateScreenHeight(20)),
-        FormError(errors: errors),
-        DefaultButton(
-          text: "Continue",
-          press: () {
-            if (_formKey.currentState.validate()) {
-              _formKey.currentState.save();
-            }
-          },
-        )
-      ],
-    ));
+          children: [
+            _buildEmailFormField(),
+            SizedBox(
+              height: SZ.getProportionateScreenHeight(20),
+            ),
+            _buildPasswordFormField(),
+            SizedBox(height: SZ.getProportionateScreenHeight(20)),
+            FormError(errors: errors),
+            DefaultButton(
+              text: "Continue",
+              press: () {
+                if (_formKey.currentState.validate()) {
+                  print("sssssssss");
+                  _formKey.currentState.save();
+                }
+              },
+            )
+          ],
+        ));
   }
 
   TextFormField _buildPasswordFormField() {
@@ -87,6 +89,8 @@ class _SignFormState extends State<SignForm> {
           if (value.isEmpty) {
             setState(() {
               errors.add("Please enter your email");
+              return "";
+              print(errors);
             });
           }
           return null;
