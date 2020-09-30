@@ -1,6 +1,7 @@
 import 'package:e_commerce_flutter/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/size_config.dart' as SZ;
+import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -45,19 +46,11 @@ class _SignFormState extends State<SignForm> {
       children: [
         TextFormField(
           decoration: InputDecoration(
+            labelText: "Email",
             hintText: "Enter your email",
             floatingLabelBehavior: FloatingLabelBehavior.always,
-            contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 15),
-            labelText: "Email",
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(28),
-                borderSide: BorderSide(color: kTextColor),
-                gapPadding: 10),
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(28),
-                borderSide: BorderSide(color: kTextColor),
-                gapPadding: 10),
-          ),
+            suffixIcon: SvgPicture.asset("assets/icons/Mail.svg")
+          )
         )
       ],
     ));
