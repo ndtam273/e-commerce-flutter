@@ -3,7 +3,7 @@ import 'package:e_commerce_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
-import 'constants.dart';
+
 import 'screens/splash/splash_screen.dart';
 
 void main() {
@@ -25,4 +25,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
