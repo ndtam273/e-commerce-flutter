@@ -1,6 +1,7 @@
 import 'package:e_commerce_flutter/size_config.dart' as SZ;
 import 'package:flutter/material.dart';
 
+import 'discount_banner.dart';
 import 'home_header.dart';
 
 class Body extends StatelessWidget {
@@ -14,6 +15,7 @@ class Body extends StatelessWidget {
             height: SZ.getProportionateScreenWidth(20),
           ),
           HomeHeader(),
+          DiscountBanner(),
         ],
       ),
     ));
