@@ -1,7 +1,10 @@
+import 'package:e_commerce_flutter/components/default_button.dart';
 import 'package:e_commerce_flutter/constants.dart';
 import 'package:e_commerce_flutter/size_config.dart' as SZ;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'otp_form.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -11,19 +14,39 @@ class Body extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: SZ.getProportionateScreenWidth(20)),
-        child: Column(
-          children: [
-            Text(
-              "OTP Verification",
-              style: headingStyle,
-            ),
-            Text(
-              "We sent your code to + 1 898 860 ***",
-              textAlign: TextAlign.center,
-            ),
-            _buildTimer(),
-            OtpForm(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: SZ.SizeConfig.screenHeight * 0.05,
+              ),
+              Text(
+                "OTP Verification",
+                style: headingStyle,
+              ),
+              Text(
+                "We sent your code to + 1 898 860 ***",
+                textAlign: TextAlign.center,
+              ),
+              _buildTimer(),
+              SizedBox(
+                height: SZ.SizeConfig.screenHeight * 0.1,
+              ),
+              OtpForm(),
+              SizedBox(
+                height: SZ.SizeConfig.screenHeight * 0.1,
+              ),
+              GestureDetector(
+                onTap: () {
+                  // resend otp code
+                },
+                child: Text(
+                  "Resend OTP Code",
+                  style: TextStyle(decoration: TextDecoration.underline),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -44,68 +67,6 @@ class Body extends StatelessWidget {
           onEnd: () {},
         )
       ],
-    );
-  }
-}
-
-class OtpForm extends StatefulWidget {
-  @override
-  _OtpFormState createState() => _OtpFormState();
-}
-
-class _OtpFormState extends State<OtpForm> {
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(
-            width: SZ.getProportionateScreenWidth(60),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.number,
-              style: TextStyle(fontSize: 24),
-              decoration: otpInputDecoration,
-              textAlign: TextAlign.center,
-              onChanged: (value) {},
-            ),
-          ),
-          SizedBox(
-            width: SZ.getProportionateScreenWidth(60),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.number,
-              style: TextStyle(fontSize: 24),
-              decoration: otpInputDecoration,
-              textAlign: TextAlign.center,
-              onChanged: (value) {},
-            ),
-          ),
-          SizedBox(
-            width: SZ.getProportionateScreenWidth(60),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.number,
-              style: TextStyle(fontSize: 24),
-              decoration: otpInputDecoration,
-              textAlign: TextAlign.center,
-              onChanged: (value) {},
-            ),
-          ),
-          SizedBox(
-            width: SZ.getProportionateScreenWidth(60),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.number,
-              style: TextStyle(fontSize: 24),
-              decoration: otpInputDecoration,
-              textAlign: TextAlign.center,
-              onChanged: (value) {},
-            ),
-          )
-        ],
-      ),
     );
   }
 }
