@@ -7,6 +7,8 @@ import 'package:flutter_svg/svg.dart';
 import 'categories.dart';
 import 'discount_banner.dart';
 import 'home_header.dart';
+import 'popular_products.dart';
+import 'product_card.dart';
 import 'section_title.dart';
 import 'special_offers.dart';
 
@@ -36,59 +38,10 @@ class Body extends StatelessWidget {
           SizedBox(
             height: SZ.getProportionateScreenWidth(30),
           ),
-          SectionTitle(text: "Popular product", press: () {}),
+          PopularProducts(),
           SizedBox(
-            width: SZ.getProportionateScreenWidth(140),
-            child: Column(
-              children: [
-                AspectRatio(
-                  aspectRatio: 1.02,
-                  child: Container(
-                    padding: EdgeInsets.all(SZ.getProportionateScreenWidth(20)),
-                    decoration: BoxDecoration(
-                      color: kSecondaryColor.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      demoProducts[0].images[0],
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  demoProducts[0].title,
-                  style: TextStyle(color: Colors.black),
-                  maxLines: 2,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "\$${demoProducts[0].price}",
-                      style: TextStyle(
-                          fontSize: SZ.getProportionateScreenWidth(18),
-                          fontWeight: FontWeight.w600,
-                          color: kPrimaryColor),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(
-                        SZ.getProportionateScreenWidth(8),
-                      ),
-                      width: SZ.getProportionateScreenWidth(28),
-                      height: SZ.getProportionateScreenWidth(28),
-                      decoration: BoxDecoration(
-                        color: kSecondaryColor.withOpacity(0.1),
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset("assets/icons/Heart Icon_2.svg"),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          )
+            height: SZ.getProportionateScreenWidth(30),
+          ),
         ],
       ),
     ));
