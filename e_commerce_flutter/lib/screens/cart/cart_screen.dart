@@ -11,6 +11,23 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(context),
       body: Body(),
+      bottomNavigationBar: Container(
+        height: 174,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(15),
+            topRight: Radius.circular(15),
+          ),
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0, -15),
+              blurRadius: 20,
+              color: Color(0xFFDADADA).withOpacity(0.15),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
