@@ -1,4 +1,5 @@
 import 'package:e_commerce_flutter/screens/cart/cart_screen.dart';
+import 'package:e_commerce_flutter/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/size_config.dart' as SZ;
 
@@ -29,7 +30,9 @@ class HomeHeader extends StatelessWidget {
           IconBtnWithCounter(
             svgSrc: "assets/icons/Bell.svg",
             numOfItem: 3,
-            press: () {},
+            press: () {
+              Navigator.pushNamed(context, ProfileScreen.routeName);
+            },
           )
         ],
       ),
