@@ -30,9 +30,7 @@ class HomeHeader extends StatelessWidget {
           IconBtnWithCounter(
             svgSrc: "assets/icons/Bell.svg",
             numOfItem: 3,
-            press: () {
-              Navigator.pushNamed(context, ProfileScreen.routeName);
-            },
+            press: () {},
           )
         ],
       ),
